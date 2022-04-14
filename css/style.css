@@ -81,7 +81,7 @@ h2{
 
 h3{
     font-size: 30px;
-    color: #496166;
+    color: #2B2F2E;
   }
 
 p{
@@ -212,7 +212,7 @@ img:nth-child(2n){
   animation: zoomup 2s ease infinite;
   display: inline-block;
   animation-delay: calc(200ms * var(--i));
-  color: #496166
+  color: #2B2F2E
 }
 
 /* flip card */
@@ -237,6 +237,11 @@ img:nth-child(2n){
 /* Do an horizontal flip when you move the mouse over the flip box container */
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
+}
+
+.flip-card:focus-within .flip-card-inner{
+  transform: rotateY( 180deg ) ;
+
 }
 
 /* Position the front and back side */
@@ -264,6 +269,11 @@ img:nth-child(2n){
   justify-content: center;
   align-items: center;
   transform: rotateY(180deg);
+
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Times New Roman', serif;
+  backface-visibility: hidden;
 }
 
 @keyframes zoomup {
@@ -279,14 +289,7 @@ img:nth-child(2n){
   }
 }
 
-@media (prefers-reduced-motion) {
-  .pic:hover{
-    animation-name: dissolve;
-  } 
-  .home-ani{
-    animation-name: dissolve;
-  }
-}
+
 @media screen and (min-width: 321px) and (max-width: 768px) {
   .navbar{
     display:flex;
@@ -435,4 +438,23 @@ img:nth-child(2n){
       background-color: black;
     }
   
+  }
+
+  @media (prefers-reduced-motion) {
+    .pic:hover{
+      animation-name: dissolve;
+    } 
+    .home-ani{
+      animation-name: dissolve;
+    }
+    .flip-card, .flip-card-back{
+      transform:none;
+    }
+  
+    .background-img{
+      background-attachment:initial;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
   }
